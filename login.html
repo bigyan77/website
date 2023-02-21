@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>Birthday login</title>
+	<link rel="stylesheet" type="text/css" href="form.css">
+  </head>
+  <body>
+    <div>
+      <h2>Happy Birthday Babe (please login with given username)</h2>
+      <form id="login-form">
+        <div>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <div>
+          <button type="submit" id="login-btn">Log in</button>
+        </div>
+      </form>
+      <div id="login-status"></div>
+    </div>
+  </body>
+</html>
+<script>
+	// Define valid login credentials
+	const validCredentials = {
+	  username: "himani",
+	  password: "magar"
+	};
+	
+	// Get the login form and status message element
+	const loginForm = document.getElementById("login-form");
+	const loginStatus = document.getElementById("login-status");
+	
+	// Add an event listener for the form submission
+	loginForm.addEventListener("submit", function(event) {
+	  event.preventDefault(); // Prevent the default form submission
+	  
+	  // Get the entered username and password
+	  const username = document.getElementById("username").value;
+	  const password = document.getElementById("password").value;
+	  
+	  // Check if the entered credentials match the valid credentials
+	  if (username === validCredentials.username && password === validCredentials.password) {
+		// If the login is successful, display a success message
+	  // Redirect to the desired page
+	  window.location.href = "himani.html";
+	  } else {
+		// If the login is not successful, display an error message
+		loginStatus.textContent = "Kripaya ramro sanga milayera password halnu hola.";
+	  }
+	});
+  </script>
+  </html>
